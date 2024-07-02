@@ -16,7 +16,12 @@ class Mozjpeg {
     companion object {
         // Used to load the 'mozjpeg' library on application startup.
         init {
-            System.loadLibrary("mozjpeg")
+            try{
+                System.loadLibrary("mozjpeg")
+            }catch (e: Throwable){
+                e.printStackTrace()
+            }
+
         }
     }
 }
